@@ -16,10 +16,10 @@ all users.Its a basic operaiton and this operation use every resposnsive project
 ## Installation
 
 Install My project  with npm
- npm init
-  npm install express
-  npm install mongoose
-  npm instal  nodemon --save-dev
+  1. npm init
+  2. npm install express
+  3. npm install mongoose
+  3. npm instal  nodemon --save-dev
 
 ```
     
@@ -47,7 +47,8 @@ What did you learn while building this project? What challenges did you face and
 Clone the project
 
 ```bash
-  git clone https://github.com/Mamun1646/CRUD-Operation-With-Rest-API.git
+      git clone https://github.com/Mamun1646/CRUD-Operation-With-Rest-API.git
+
 ```
 
 Go to the project directory
