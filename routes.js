@@ -54,9 +54,9 @@ router.patch("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     await employee.deleteOne({ _id: req.params.id });
-    res.json("Succesfully Deleled !");
+   // res.json("Succesfully Deleled !");
     res.status(204).send();
-
+    
     console.log("Employee Document Deleted Successfully!");
   } catch (error) {
     res.status(404);
