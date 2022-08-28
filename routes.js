@@ -1,6 +1,4 @@
-const e = require("express");
 const express = require("express");
-const { default: mongoose } = require("mongoose");
 const router = express.Router();
 const employee = require("./models/Employees");
 //Get for ALl Employee
@@ -20,7 +18,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-
 //Post a Document into the Collections
 router.post("/", async (req, res) => {
   const employee_document = new employee({
@@ -34,27 +31,26 @@ router.post("/", async (req, res) => {
 });
 
 //Update Document
-  router.patch("/:id", async (req, res) => {
-    try {
-      const updatedUser = await employee.findByIdAndUpdate(
-        req.params.id,
-        {
-          Name: req.body.Name,
-          Age: req.body.Age,
-          University: req.body.University,
-          Status: req.body.status,
-        },
-        { new: true }
-      );
-      res.json(updatedUser);
-    } catch (error) {
-      res.status(404);
-      res.send({ error: "Post doesn't exist!" });
-    }
-  });
+router.patch("/:id", async (req, res) => {
+  try {
+    const updatedUser = await employee.findByIdAndUpdate(
+      req.params.id,
+      {
+        Name: req.body.Name,
+        Age: req.body.Age,
+        University: req.body.University,
+        Status: req.body.status,
+      },
+      { new: true }
+    );
+    res.json(updatedUser);
+  } catch (error) {
+    res.status(404);
+    res.send({ error: "Post doesn't exist!" });
+  }
+});
 
-
-  //Delele collection
+//Delele collection
 router.delete("/:id", async (req, res) => {
   try {
     await employee.deleteOne({ _id: req.params.id });
